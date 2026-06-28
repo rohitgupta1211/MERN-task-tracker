@@ -21,7 +21,7 @@ function App() {
     }
   };
 
-  // 🛠️ ADD TASK (With Form Validation)
+  // 🛠️ ADD TASK (Render URL Fixed)
   const addTask = async (e) => {
     e.preventDefault();
     
@@ -31,7 +31,7 @@ function App() {
       return;
     }
 
-    await fetch("http://localhost:5000/api/tasks", {
+    await fetch("https://mern-task-tracker-a31s.onrender.com/api/tasks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title: title.trim(), description: description.trim() }),
@@ -42,9 +42,10 @@ function App() {
     fetchTasks();
   };
 
+  // 🛠️ DELETE TASK (Render URL Fixed)
   const deleteTask = async (id) => {
     if (window.confirm("Delete this task?")) {
-      await fetch(`http://localhost:5000/api/tasks/${id}`, { method: "DELETE" });
+      await fetch(`https://mern-task-tracker-a31s.onrender.com/api/tasks/${id}`, { method: "DELETE" });
       fetchTasks();
     }
   };
@@ -55,7 +56,7 @@ function App() {
     setDescription(task.description);
   };
 
-  // 🛠️ UPDATE TASK (With Form Validation)
+  // 🛠️ UPDATE TASK (Render URL Fixed)
   const updateTask = async (e) => {
     e.preventDefault();
 
@@ -65,7 +66,7 @@ function App() {
       return;
     }
 
-    await fetch(`http://localhost:5000/api/tasks/${editingId}`, {
+    await fetch(`https://mern-task-tracker-a31s.onrender.com/api/tasks/${editingId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title: title.trim(), description: description.trim() }),
