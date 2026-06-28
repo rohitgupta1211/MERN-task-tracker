@@ -1,7 +1,8 @@
 import axios from "axios";
 
+// Axios instance banate waqt baseURL aise set karte hain:
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://mern-task-tracker-a31s.onrender.com"
 });
 
 // GET all tasks
