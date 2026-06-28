@@ -1,11 +1,11 @@
 import axios from "axios";
 
-// Axios instance banate waqt baseURL aise set karte hain:
+
 const API = axios.create({
-  baseURL: "https://mern-task-tracker-a31s.onrender.com"
+  baseURL: "https://mern-task-tracker-a31s.onrender.com/api" 
 });
 
-// GET all tasks
+// GET all tasks -> Isse automatic request ".../api/tasks" par jayegi
 export const getTasks = () => API.get("/tasks");
 
 // CREATE task
